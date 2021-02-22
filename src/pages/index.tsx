@@ -4,6 +4,7 @@ import Container from '../components/Container'
 import Layer from '../components/Layer'
 import FormLogin from '../components/LoginForm'
 import ContentWrapper from '../components/ContentWrapper'
+import RecoverPassword from '../components/RecoverPassword'
 
 const Home: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Home: React.FC = () => {
         <Layer />
         <ContentWrapper>
           <FormLogin />
+          <RecoverPassword />
         </ContentWrapper>
       </Container>
     </>

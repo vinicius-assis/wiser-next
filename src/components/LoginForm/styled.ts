@@ -8,8 +8,9 @@ export const Form = styled.form`
   flex-direction: column;
   background-color: #f5f5ff;
   border-radius: 8px;
-  position: absolute;
+  position: relative;
   padding-top: 25px;
+  margin-bottom: 48px;
 `
 
 export const Title = styled.h1`
@@ -27,7 +28,6 @@ export const Subtitle = styled.h3`
   line-height: 20px;
   font-weight: 600;
   color: #989fdb;
-  margin-bottom: 20px;
 `
 
 export const Label = styled.label`
@@ -35,6 +35,7 @@ export const Label = styled.label`
   color: #383e71;
   text-transform: uppercase;
   margin-bottom: 8px;
+  margin-top: 16px;
 `
 
 export const Input = styled.input`
@@ -46,7 +47,14 @@ export const Input = styled.input`
   border: 1px solid #989fdb;
   padding-left: 17px;
   border-radius: 8px;
-  margin-bottom: 16px;
+`
+
+export const ErrorMessage = styled.span`
+  font-size: 10px;
+  color: #ff377f;
+  margin-top: 10px;
+  margin-left: 16px;
+  display: none;
 `
 
 export const InputWrapper = styled.p`
@@ -67,4 +75,5 @@ export const Button = styled.button`
   position: absolute;
   bottom: 0;
   transform: translateY(50%);
+  cursor: pointer;
 `

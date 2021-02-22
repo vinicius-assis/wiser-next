@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Button,
+  ErrorMessage,
   Form,
   Input,
   InputWrapper,
@@ -16,6 +17,7 @@ const FormLogin = (): JSX.Element => (
     <InputWrapper>
       <Label>E-mail</Label>
       <Input />
+      <ErrorMessage>Digite um e-mail válido</ErrorMessage>
     </InputWrapper>
     <InputWrapper>
       <Label>Senha</Label>
