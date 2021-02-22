@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import Container from '../components/Container'
+import Layer from '../components/Layer'
 
 const Home: React.FC = () => {
   return (
@@ -9,9 +11,10 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Container>
+        <Layer />
         <h1>Hello Wiser!</h1>
-      </main>
+      </Container>
     </>
   )
 }
