@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Container from '../components/Container'
 import Layer from '../components/Layer'
+import FormLogin from '../components/LoginForm'
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
 
       <Container>
         <Layer />
-        <h1>Hello Wiser!</h1>
+        <FormLogin />
       </Container>
     </>
   )
