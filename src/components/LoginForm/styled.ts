@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Form = styled.form`
   width: 311px;
-  height: 357px;
+  height: 381px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -52,4 +52,19 @@ export const Input = styled.input`
 export const InputWrapper = styled.p`
   display: flex;
   flex-direction: column;
+`
+
+export const Button = styled.button`
+  background: linear-gradient(267.79deg, #383e71 0%, #9d25b0 99.18%);
+  width: 168px;
+  height: 48px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px auto;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
 `

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Container from '../components/Container'
 import Layer from '../components/Layer'
 import FormLogin from '../components/LoginForm'
+import ContentWrapper from '../components/ContentWrapper'
 
 const Home: React.FC = () => {
   return (
@@ -20,7 +21,9 @@ const Home: React.FC = () => {
 
       <Container>
         <Layer />
-        <FormLogin />
+        <ContentWrapper>
+          <FormLogin />
+        </ContentWrapper>
       </Container>
     </>
   )

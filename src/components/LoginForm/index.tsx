@@ -1,5 +1,13 @@
 import React from 'react'
-import { Form, Input, InputWrapper, Label, Subtitle, Title } from './styled'
+import {
+  Button,
+  Form,
+  Input,
+  InputWrapper,
+  Label,
+  Subtitle,
+  Title
+} from './styled'
 
 const FormLogin = (): JSX.Element => (
   <Form>
@@ -13,6 +21,7 @@ const FormLogin = (): JSX.Element => (
       <Label>Senha</Label>
       <Input />
     </InputWrapper>
+    <Button>Entrar</Button>
   </Form>
 )
 
