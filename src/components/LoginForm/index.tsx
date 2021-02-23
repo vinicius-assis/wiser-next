@@ -16,12 +16,12 @@ const FormLogin = (): JSX.Element => (
     <Subtitle>Para acessar a plataforma, faça seu login.</Subtitle>
     <InputWrapper>
       <Label>E-mail</Label>
-      <Input />
+      <Input type="email" />
       <ErrorMessage>Digite um e-mail válido</ErrorMessage>
     </InputWrapper>
     <InputWrapper>
       <Label>Senha</Label>
-      <Input />
+      <Input type="password" />
     </InputWrapper>
     <Button>Entrar</Button>
   </Form>

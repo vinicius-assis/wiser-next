@@ -56,7 +56,9 @@ export const Label = styled.label`
   margin-top: 16px;
 `
 
-export const Input = styled.input`
+export const Input = styled.input.attrs(props => ({
+  type: props.type
+}))`
   width: 256px;
   background-color: #faf5ff;
   font-size: 10px;
@@ -65,6 +67,10 @@ export const Input = styled.input`
   border: 1px solid #989fdb;
   padding-left: 17px;
   border-radius: 8px;
+
+  &:focus {
+    box-shadow: 0px 2px 8px #cf99db;
+  }
 
   @media (min-width: 768px) {
     width: 100%;
@@ -105,5 +111,6 @@ export const Button = styled.button`
 
   @media (min-width: 768px) {
     width: 100%;
+    box-shadow: 0px 10px 25px #cf99db;
   }
 `
