@@ -14,6 +14,7 @@ export const Form = styled.form`
 
   @media (min-width: 768px) {
     background-color: unset;
+    height: fit-content;
     width: 320px;
     padding: 15px 10px auto;
     align-items: flex-start;
@@ -56,9 +57,11 @@ export const Label = styled.label`
   margin-top: 16px;
 `
 
-export const Input = styled.input.attrs(props => ({
-  type: props.type
-}))`
+export const Input = styled.input.attrs(props =>
+  props.maxLength
+    ? { type: props.type, maxLenght: props.maxLength }
+    : { type: props.type }
+)`
   width: 256px;
   background-color: #faf5ff;
   font-size: 10px;
@@ -80,9 +83,14 @@ export const Input = styled.input.attrs(props => ({
 export const ErrorMessage = styled.span`
   font-size: 10px;
   color: #ff377f;
-  margin-top: 10px;
-  margin-left: 16px;
-  display: none;
+  margin-top: 5px;
+  margin-left: 10px;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(15px);
+  }
 `
 
 export const InputWrapper = styled.p`
@@ -91,10 +99,14 @@ export const InputWrapper = styled.p`
 
   @media (min-width: 768px) {
     width: 100%;
+    position: relative;
+    margin-bottom: 20px;
   }
 `
 
-export const Button = styled.button`
+export const Button = styled.button.attrs({
+  type: 'submit'
+})`
   background: linear-gradient(267.79deg, #383e71 0%, #9d25b0 99.18%);
   width: 168px;
   height: 48px;
@@ -112,5 +124,6 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     width: 100%;
     box-shadow: 0px 10px 25px #cf99db;
+    position: static;
   }
 `
