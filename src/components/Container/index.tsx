@@ -7,6 +7,10 @@ const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
 `
 
 export default Container

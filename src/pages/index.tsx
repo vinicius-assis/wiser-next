@@ -22,13 +22,13 @@ const Home: React.FC = () => {
       </Head>
 
       <Container>
-        <Layer />
         <ImageContainer>
-          <ContentWrapper>
-            <FormLogin />
-            <RecoverPassword />
-          </ContentWrapper>
+          <Layer />
         </ImageContainer>
+        <ContentWrapper>
+          <FormLogin />
+          <RecoverPassword />
+        </ContentWrapper>
       </Container>
     </>
   )

@@ -14,6 +14,17 @@ const ImageContainer = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
+
+  @media (min-width: 768px) {
+    position: static;
+    width: 100%;
+    background-size: cover;
+  }
+
+  @media (min-width: 1366px) {
+    min-width: 765px;
+    width: 100%;
+  }
 `
 
 export default ImageContainer

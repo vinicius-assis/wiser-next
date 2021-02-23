@@ -11,6 +11,13 @@ export const Form = styled.form`
   position: relative;
   padding-top: 25px;
   margin-bottom: 48px;
+
+  @media (min-width: 768px) {
+    background-color: unset;
+    width: 320px;
+    padding: 15px 10px auto;
+    align-items: flex-start;
+  }
 `
 
 export const Title = styled.h1`
@@ -21,6 +28,12 @@ export const Title = styled.h1`
   color: #383e71;
   font-weight: 400;
   margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    width: 231px;
+    font-size: 40px;
+    text-align: start;
+  }
 `
 
 export const Subtitle = styled.h3`
@@ -28,6 +41,11 @@ export const Subtitle = styled.h3`
   line-height: 20px;
   font-weight: 600;
   color: #989fdb;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    width: 222px;
+  }
 `
 
 export const Label = styled.label`
@@ -47,6 +65,10 @@ export const Input = styled.input`
   border: 1px solid #989fdb;
   padding-left: 17px;
   border-radius: 8px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const ErrorMessage = styled.span`
@@ -60,6 +82,10 @@ export const ErrorMessage = styled.span`
 export const InputWrapper = styled.p`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const Button = styled.button`
@@ -76,4 +102,8 @@ export const Button = styled.button`
   bottom: 0;
   transform: translateY(50%);
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `
