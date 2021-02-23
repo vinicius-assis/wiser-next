@@ -8,6 +8,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 2;
 `
 
 export default ContentWrapper

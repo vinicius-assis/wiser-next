@@ -5,6 +5,7 @@ const Layer = styled.div`
   height: 100vh;
   background: linear-gradient(0deg, #130525 48%, rgba(105, 57, 153, 0) 110%);
   position: absolute;
+  z-index: 1;
 `
 
 export default Layer
