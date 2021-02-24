@@ -7,14 +7,12 @@ import RecoverPassword from '../components/RecoverPassword'
 import Layer from '../components/Layer'
 import ImageContainer from '../components/ImageContainer'
 
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps, InferGetStaticPropsType } from 'next'
 import { fetchUsers } from '../api/service'
 
 const Home: React.FC = ({
   data
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(data)
-
+}: InferGetStaticPropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Head>
@@ -31,7 +29,7 @@ const Home: React.FC = ({
           <Layer />
         </ImageContainer>
         <ContentWrapper>
-          <FormLogin />
+          <FormLogin data={data} />
           <RecoverPassword />
         </ContentWrapper>
       </Container>
@@ -39,7 +37,7 @@ const Home: React.FC = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await fetchUsers()
 
   return {

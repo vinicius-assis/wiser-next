@@ -11,10 +11,13 @@ import {
 } from './styled'
 
 import verifyEmail from '../../utils/verifyEmail'
+import validateUser from '../../utils/validateUser'
+import { TFetchUser } from '../../api/service'
 
-const FormLogin = (): JSX.Element => {
+const FormLogin = ({ data }: TFetchUser): JSX.Element => {
   const [emailError, setEmailError] = useState<boolean>(false)
   const [passwordError, setPasswordError] = useState<boolean>(false)
+  const [loginSuccessMessage, setLoginSuccessMessage] = useState<string>('')
   const emailInput = useRef() as React.MutableRefObject<HTMLInputElement>
   const passwordInput = useRef() as React.MutableRefObject<HTMLInputElement>
 
@@ -34,6 +37,10 @@ const FormLogin = (): JSX.Element => {
       event.preventDefault()
       setPasswordError(true)
     }
+
+    event.preventDefault()
+    const user = validateUser({ data, emailValue, passwordValue })
+    setLoginSuccessMessage(`Bem vindo, ${user.firstname}!`)
   }
 
   return (

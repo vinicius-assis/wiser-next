@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-type TFetchUser = {
+export type TFetchUser = {
   data: TUsers[]
 }
 
@@ -9,7 +9,7 @@ export type TUsers = {
   firstname: string
   lastname: string
   email: string
-  senha: string
+  password: string
 }
 
 export const fetchUsers = async (): Promise<TFetchUser> => {
