@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+type TErrorMessage = {
+  wrongUser?: boolean
+}
+
 export const Form = styled.form`
   width: 311px;
   height: 381px;
@@ -80,16 +84,17 @@ export const Input = styled.input.attrs(props =>
   }
 `
 
-export const ErrorMessage = styled.span`
+export const ErrorMessage = styled.span<TErrorMessage>`
   font-size: 10px;
   color: #ff377f;
   margin-top: 5px;
   margin-left: 10px;
 
   @media (min-width: 768px) {
-    position: absolute;
-    bottom: 0;
-    transform: translateY(15px);
+    ${props =>
+      !props.wrongUser
+        ? 'position: absolute;bottom: 0;transform: translateY(15px);'
+        : ''}
   }
 `
 

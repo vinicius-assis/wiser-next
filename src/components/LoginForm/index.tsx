@@ -87,7 +87,11 @@ const FormLogin = ({ data, action }: TFetchUser): JSX.Element => {
               </ErrorMessage>
             )}
           </InputWrapper>
-          {wrongUser && <ErrorMessage>Senha ou email inválido.</ErrorMessage>}
+          {wrongUser && (
+            <ErrorMessage wrongUser={true}>
+              Senha ou email inválido.
+            </ErrorMessage>
+          )}
           <Button>Entrar</Button>
         </Form>
       )}
