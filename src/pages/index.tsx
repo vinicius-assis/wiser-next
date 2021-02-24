@@ -7,7 +7,14 @@ import RecoverPassword from '../components/RecoverPassword'
 import Layer from '../components/Layer'
 import ImageContainer from '../components/ImageContainer'
 
-const Home: React.FC = () => {
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { fetchUsers } from '../api/service'
+
+const Home: React.FC = ({
+  data
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log(data)
+
   return (
     <>
       <Head>
@@ -17,8 +24,6 @@ const Home: React.FC = () => {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
           rel="stylesheet"
         />
-
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container>
@@ -32,6 +37,16 @@ const Home: React.FC = () => {
       </Container>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await fetchUsers()
+
+  return {
+    props: {
+      data
+    }
+  }
 }
 
 export default Home

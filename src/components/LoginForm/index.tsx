@@ -1,4 +1,3 @@
-/* eslint-disable no-control-regex */
 import React, { useRef, useState } from 'react'
 import {
   Button,
@@ -11,17 +10,13 @@ import {
   Title
 } from './styled'
 
+import verifyEmail from '../../utils/verifyEmail'
+
 const FormLogin = (): JSX.Element => {
   const [emailError, setEmailError] = useState<boolean>(false)
   const [passwordError, setPasswordError] = useState<boolean>(false)
   const emailInput = useRef() as React.MutableRefObject<HTMLInputElement>
   const passwordInput = useRef() as React.MutableRefObject<HTMLInputElement>
-
-  const itIsvalidateEmail = email => {
-    // eslint-disable-next-line no-useless-escape
-    const emailRegex = /^[a-zA-z0-9\.-]+@[a-zA-z0-9]+\.[a-zA-z0-9]+\.?[a-zA-Z0-9]+$/
-    return !emailRegex.test(email)
-  }
 
   const removeError = event => {
     const type = event.target.type
@@ -31,7 +26,7 @@ const FormLogin = (): JSX.Element => {
   const handleSubmit = event => {
     const emailValue = emailInput.current.value
     const passwordValue = passwordInput.current.value
-    if (itIsvalidateEmail(emailValue)) {
+    if (verifyEmail(emailValue)) {
       event.preventDefault()
       setEmailError(true)
     }
