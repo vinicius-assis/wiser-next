@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Container from '../components/Container'
 import FormLogin from '../components/LoginForm'
@@ -9,10 +9,13 @@ import ImageContainer from '../components/ImageContainer'
 
 import { GetServerSideProps, InferGetStaticPropsType } from 'next'
 import { fetchUsers } from '../api/service'
+import toggleRecover from '../utils/toggleRecover'
 
 const Home: React.FC = ({
   data
 }: InferGetStaticPropsType<typeof getServerSideProps>) => {
+  const [showRecover, setShowRecover] = useState<boolean>(true)
+
   return (
     <>
       <Head>
@@ -29,8 +32,11 @@ const Home: React.FC = ({
           <Layer />
         </ImageContainer>
         <ContentWrapper>
-          <FormLogin data={data} />
-          <RecoverPassword />
+          <FormLogin
+            data={data}
+            action={() => toggleRecover(setShowRecover, showRecover)}
+          />
+          {showRecover && <RecoverPassword />}
         </ContentWrapper>
       </Container>
     </>

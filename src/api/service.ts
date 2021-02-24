@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export type TFetchUser = {
   data: TUsers[]
+  action?: () => void
 }
 
 export type TUsers = {
